@@ -28,6 +28,7 @@ export function SanityImage({
   className,
   quality = 75,
   fill,
+  sizes,
   ...props
 }: ImageProps) {
   if (!asset?.asset) return null;
@@ -57,12 +58,11 @@ export function SanityImage({
     // - Tablet (<768px): Image takes up 50% of viewport width
     // - Small desktop (<1200px): Image takes up 33% of viewport width
     // - Large desktop (>1200px): Image takes up 25% of viewport width
-    sizes:
+    sizes: sizes ??
       "(max-width: 640px) 75vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw",
     ...getBlurDataURL(asset),
     ...props,
   };
-
   // Add width and height only if fill is not true
   if (!fill) {
     return (

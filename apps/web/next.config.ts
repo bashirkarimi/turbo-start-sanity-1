@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
   },
   images: {
     minimumCacheTTL: 31536000,
+    // remotePatterns: [{ hostname: "<http://cdn.sanity.io|cdn.sanity.io>" }],
     remotePatterns: [
       {
         protocol: "https",
